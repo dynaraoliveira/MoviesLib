@@ -30,7 +30,7 @@ class MovieTableViewCell: UITableViewCell {
         ivMovie.image = UIImage(named: movie.image)
         lbTitle.text = movie.title
         lbSummary.text = movie.summary
-        lbRating.text = String(movie.rating)
+        lbRating.text = "⭐️ \(movie.rating)/10"
     }
     
     override func prepareForReuse() {
