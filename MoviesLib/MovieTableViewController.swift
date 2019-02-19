@@ -76,6 +76,16 @@ class MovieTableViewController: UITableViewController {
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let movie = fetchedResultsController.object(at: indexPath)
+            context.delete(movie)
+            try? context.save()
+            
+        }
+        
+    }
 }
 
 extension MovieTableViewController: NSFetchedResultsControllerDelegate {
